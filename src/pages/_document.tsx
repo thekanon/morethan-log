@@ -32,7 +32,6 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <Analytics />
         </body>
       </Html>
     )

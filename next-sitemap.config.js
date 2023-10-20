@@ -5,4 +5,10 @@ module.exports = {
   generateRobotsTxt: true,
   sitemapSize: 7000,
   generateIndexSitemap: false,
+  transform: (config, url) => {
+    if (url.loc) {
+      url.loc = encodeURI(url.loc) // URL 인코딩
+    }
+    return url
+  },
 }

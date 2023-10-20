@@ -7,7 +7,7 @@ module.exports = {
   generateIndexSitemap: false,
   transform: (config, url) => {
     if (url.loc) {
-      url.loc = encodeURI(url.loc) // URL 인코딩
+      url.loc = encodeURI(url.loc.trim()) // URL 인코딩
     }
     return url
   },

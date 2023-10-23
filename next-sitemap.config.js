@@ -8,7 +8,6 @@ module.exports = {
   transform: async (config, path) => {
     return {
       loc: encodeURI(path.trim()), // => this will be exported as http(s)://<config.siteUrl>/<path>
-      changefreq: config.changefreq,
       priority: config.priority,
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
     }

@@ -9,7 +9,11 @@ module.exports = {
     return {
       loc: encodeURI(path.trim()), // => this will be exported as http(s)://<config.siteUrl>/<path>
       priority: config.priority,
-      lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+      lastmod: config.autoLastmod ? toCustomISOFormat(new Date()) : undefined,
     }
   },
+}
+const toCustomISOFormat = (date) => {
+  let iso = date.toISOString()
+  return iso.slice(0, 19) + "+00:00"
 }

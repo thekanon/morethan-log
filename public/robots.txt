@@ -4,3 +4,6 @@ Allow: /
 
 # Host
 Host: https://doovelop-log.vercel.app
+
+# Sitemaps
+Sitemap: https://doovelop-log.vercel.app/sitemap.xml

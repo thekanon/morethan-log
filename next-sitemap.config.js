@@ -5,10 +5,12 @@ module.exports = {
   generateRobotsTxt: true,
   sitemapSize: 7000,
   generateIndexSitemap: false,
-  transform: (config, url) => {
-    if (url.loc) {
-      url.loc = encodeURI(url.loc.trim()) // URL 인코딩
+  transform: async (config, path) => {
+    return {
+      loc: encodeURI(path.trim()), // => this will be exported as http(s)://<config.siteUrl>/<path>
+      changefreq: config.changefreq,
+      priority: config.priority,
+      lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
     }
-    return url
   },
 }

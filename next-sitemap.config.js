@@ -7,7 +7,7 @@ module.exports = {
   generateIndexSitemap: false,
   transform: async (config, path) => {
     return {
-      loc: encodeURI(path.trim()), // => this will be exported as http(s)://<config.siteUrl>/<path>
+      loc: encodeURI(path.trim()),
       priority: config.priority,
       lastmod: config.autoLastmod ? toCustomISOFormat(new Date()) : undefined,
     }

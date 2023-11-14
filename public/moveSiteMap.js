@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
+// XML string
+const xmlString = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url><loc>https://doovelop-log.vercel.app</loc><lastmod>2023-11-07T11:05:04+00:00</lastmod><priority>0.7</priority></url>
 <url><loc>https://doovelop-log.vercel.app/how-to-apple-login-react</loc><lastmod>2023-11-07T11:05:04+00:00</lastmod><priority>0.7</priority></url>
@@ -58,4 +59,29 @@
 <url><loc>https://doovelop-log.vercel.app/%EC%A7%91-VPN</loc><lastmod>2023-11-07T11:05:04+00:00</lastmod><priority>0.7</priority></url>
 <url><loc>https://doovelop-log.vercel.app/%ED%9A%8C%EC%82%AC%EC%97%90%EC%84%9C-%EB%AA%B0%EB%9E%98-%EA%B3%B5%EB%B6%80%ED%95%98%EA%B8%B0</loc><lastmod>2023-11-07T11:05:04+00:00</lastmod><priority>0.7</priority></url>
 <url><loc>https://doovelop-log.vercel.app/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C-%ED%94%84%EB%A6%AC%EB%9E%9C%EC%84%9C</loc><lastmod>2023-11-07T11:05:04+00:00</lastmod><priority>0.7</priority></url>
-</urlset>
+</urlset>`
+
+// Function to parse XML and extract URLs
+function extractUrls(xmlStr) {
+  const parser = new DOMParser()
+  const xmlDoc = parser.parseFromString(xmlStr, "text/xml")
+  const urlElements = xmlDoc.getElementsByTagName("loc")
+  let urls = []
+
+  for (let i = 0; i < urlElements.length; i++) {
+    urls.push(urlElements[i].textContent)
+  }
+
+  return urls
+}
+
+// Extract and log the URLs
+const urls = extractUrls(xmlString)
+console.log(urls)
+
+// window open url
+urls.forEach((url, index) => {
+  setTimeout(() => {
+    window.open(url)
+  }, index * 1000)
+})

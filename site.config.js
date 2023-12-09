@@ -12,11 +12,11 @@ const CONFIG = {
   },
   projects: [
     {
-      name: "chatGPT로 면접질문 생성해서 구글에 노출하는 웹사이트",
+      name: "면접질문 GPT",
       href: "https://job-search-log.vercel.app",
     },
     {
-      name: `키워드 주면 AI가 일러스트 그려주는 앱`,
+      name: `[망함]AI 일러스트 생성 앱`,
       href: "http://dombtido.iptime.org:3002",
     },
     {
@@ -24,7 +24,7 @@ const CONFIG = {
       href: "http://dombtido.iptime.org:7090",
     },
     {
-      name: "출퇴근할때 BBC 뉴스로 영어공부하는 웹앱",
+      name: "BBC 뉴스로 영어공부하는 웹앱",
       href: "http://dombtido.iptime.org:3000",
     },
   ],

@@ -12,6 +12,10 @@ const CONFIG = {
   },
   projects: [
     {
+      name: "Dev Quiz",
+      href: "https://doombti.vercel.app",
+    },
+    {
       name: "면접질문 GPT",
       href: "https://job-search-log.vercel.app",
     },
